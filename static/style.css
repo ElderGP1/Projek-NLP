@@ -1,79 +1,58 @@
-/* style.css */
-
-/* Reset dasar agar tidak ada spasi putih aneh di pinggir */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif; /* Menggunakan font dari kode lama Anda */
+.main-menu form button:hover {
+    background: linear-gradient(to right, #a56300, #8c5401);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
-body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* Styling Gambar Makanan Animasi */
+.food-animation {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    animation-name: foodMove;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 0.8;
+    z-index: 5;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
 }
 
-/* Styling untuk kotak menu utama */
-.menu-container {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  width: 90%;
-  max-width: 450px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.food-1 { 
+    animation-delay: 0s; 
+    background-color: #8B4513;
+}
+.food-2 { 
+    animation-delay: 4s; 
+    background-color: #DAA520;
+}
+.food-3 { 
+    animation-delay: 8s; 
+    background-color: #2F4F4F;
+}
+.food-4 { 
+    animation-delay: 12s; 
+    background-color: #CD853F;
+}
+.food-5 { 
+    animation-delay: 16s; 
+    background-color: #8FBC8F;
 }
 
-.menu-container h1 {
-    margin-top: 0; /* Menghapus margin atas pada judul */
-    margin-bottom: 25px;
+/* Keyframes untuk menggerakkan gambar makanan */
+@keyframes foodMove {
+    0% { top: -10%; left: 10%; transform: rotate(0deg); }
+    25% { top: 20%; left: 90%; transform: rotate(90deg); }
+    50% { top: 80%; left: 20%; transform: rotate(180deg); }
+    75% { top: 50%; left: -10%; transform: rotate(270deg); }
+    100% { top: -10%; left: 10%; transform: rotate(360deg); }
 }
 
-/* Styling umum untuk elemen form agar rapi */
-.menu-container form label,
-.menu-container form select,
-.menu-container form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.menu-container form label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-align: left; /* Label rata kiri */
-}
-
-.menu-container form select {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-/* Styling utama untuk tombol "Mulai" */
-.menu-container form button {
-  padding: 12px 20px;
-  border: none;
-  background-color: #007BFF;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-/* Efek saat kursor mouse berada di atas tombol */
-.menu-container form button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
+/* Emoji styling for food items */
+.food-1::after { content: "🍖"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px; }
+.food-2::after { content: "🍲"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px; }
+.food-3::after { content: "🍜"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px; }
+.food-4::after { content: "🍢"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px; }
+.food-5::after { content: "🥘"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px; }
